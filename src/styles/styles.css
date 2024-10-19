@@ -1,0 +1,202 @@
+/* Mantendo o CSS existente */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #6366f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#container {
+    background-color: #f0f8ff;
+    width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.tab-btn {
+    width: 100%;
+    border: none;
+    color: #020617;
+    background-color: #f0f8ff;
+    border-radius: 8px 8px 0px 0px;
+    font-weight: 500;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.tab-btn.active {
+    background-color: #c7d2fe;
+}
+
+.tab-btn:hover {
+    background-color: #a5b4fc;
+}
+
+.content {
+    display: none;
+}
+
+.content.show {
+    display: block;
+    background-color: #c7d2fe;
+    border-radius: 0px 0px 8px 8px;
+    padding: 16px;
+}
+
+.content-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para organizar o formulário em colunas */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Caixas de texto em flexbox, ocupando metade do container */
+.textfield {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px); /* Ocupa metade da largura com espaçamento */
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    padding: 10px;
+    border: 2px solid #a5b4fc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color .3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #6366f2;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    flex: 1 1 100%; /* As caixas de texto longas ocupam toda a largura */
+}
+
+/* Estilos para o botão */
+.btn-save {
+    padding: 10px 15px;
+    background-color: #6366f2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    flex: 1 1 100%; /* O botão ocupa 100% da largura */
+}
+
+.btn-save:hover {
+    background-color: #4f46e5;
+}
+
+/* Estilos do chat */
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    word-wrap: break-word;
+    max-width: 80%;
+}
+
+.message.player {
+    background-color: #dbeafe;
+    align-self: flex-start;
+}
+
+.message.mestre {
+    background-color: #fef3c7;
+    align-self: flex-end;
+}
+
+#nickname, #message {
+    width: calc(100% - 80px);
+}
+
+#send {
+    padding: 10px 20px;
+    background-color: #6366f2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send:hover {
+    background-color: #4f46e5;
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+    #container {
+        width: 90%;
+    }
+    
+    /* Em telas pequenas, as caixas de texto ocupam 100% da largura */
+    .textfield {
+        flex: 1 1 100%;
+    }
+}
